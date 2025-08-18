@@ -1,0 +1,53 @@
+{
+  "name": "@dot-ui/cli",
+  "version": "0.0.1",
+  "description": "Dot UI CLI – scaffolding, component installation, and project setup tool for Dot UI.",
+  "bin": {
+    "dot-ui": "bin/dot-ui.js"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "dev": "node --loader ts-node/esm src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint . --ext .ts",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "dot-ui",
+    "cli",
+    "ui-library",
+    "components",
+    "nextjs",
+    "tailwind",
+    "shadcn"
+  ],
+  "author": "Abdul Haseeb <a.official.haseeb@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.14.0",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "ora": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "eslint": "^9.8.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "vitest": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
