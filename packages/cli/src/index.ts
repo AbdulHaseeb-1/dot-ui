@@ -1,11 +1,21 @@
 #!/usr/bin/env node
 import { Command } from "commander";
+import packageJson from "../package.json";
+import { defaults } from "@/src/config.js";
+import { init } from "@/src/commands/init";
 
-let program = new Command();
 
-program.option("-v, --version","version number");
+let program = new Command() 
+  .name(defaults.name) // dot-ui
+  .version(
+    packageJson.version || defaults.defaultVersion,
+    "-v, --version",
+    "display the version number"
+  );
 
-program.parse()
+program.addCommand(init);
+
+program.parse();
 
 const options = program.opts();
 

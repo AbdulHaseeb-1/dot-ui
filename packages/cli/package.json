@@ -1,7 +1,7 @@
 {
-  "name": "@dot-ui/cli",
+  "name": "rusty-ui",
   "version": "0.0.1",
-  "description": "Dot UI CLI – scaffolding, component installation, and project setup tool for Dot UI.",
+  "description": "Rusty UI CLI – scaffolding, component installation, and project setup tool for Dot UI.",
   "bin": {
     "dot-ui": "bin/dot-ui.js"
   },
@@ -13,14 +13,14 @@
     "bin"
   ],
   "scripts": {
-    "dev": "node --loader ts-node/esm src/index.ts",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsup",
+    "start": "node dist/index.js",
     "lint": "eslint . --ext .ts",
     "prepublishOnly": "pnpm build",
     "test": "vitest"
   },
   "keywords": [
-    "dot-ui",
+    "rusty-ui",
     "cli",
     "ui-library",
     "components",
@@ -32,10 +32,8 @@
   "license": "MIT",
   "packageManager": "pnpm@10.14.0",
   "dependencies": {
-    "chalk": "^5.3.0",
     "commander": "^12.1.0",
-    "fs-extra": "^11.2.0",
-    "ora": "^8.1.0"
+    "tsup": "^8.5.0"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

@@ -1,36 +1,14 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    /* File Layout */
-    "rootDir": "./src",
-    "outDir": "./dist",
-
-    /* Environment Settings */
-    "module": "NodeNext",          // Use Node’s native ESM loader
-    "moduleResolution": "NodeNext",
-    "target": "ES2022",            // Modern Node syntax (Node 18+)
-    "lib": ["ES2022"],
-    "types": ["node"],             // Enable Node.js type definitions
-
-    /* Output Options */
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-
-    /* Stricter Typechecking Options */
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    /* Recommended Options */
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-
-    /* Module System */
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "moduleDetection": "force"
+    "isolatedModules": false,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "test/fixtures"]
 }
